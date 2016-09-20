@@ -1,12 +1,62 @@
-var userName = prompt('What is your name?');
-console.log('The user\'s name is ' + userName);
-var userAge = prompt('Hello ' + userName + ', How old are you?');
-console.log('The user\'s age is ' + userAge);
-alert('My you are... old. Are any of your childhood friends still alive today?');
-alert('I\'m sorry, that was rude of me. Besides, age is just a number. If it makes you feel better, my age is ' + (userAge - 1) + '. But there\'s no need to be jealous of my youth. You probably feel much younger than me on the inside, which is what really matters.');
-var movie = prompt('Allow me to appologize for my previous comment. I\'m sorry. There. That was awkward. Have you seen any good movies lately? What\'s the last movie that you have seen?');
-console.log('The last movie the user watched is ' + movie);
-alert('Wow, ' + userName + ', I never thought someone as old as ' + userAge + ' would have seen ' + movie + '! That\'s incredible!');
-var scale = prompt('Hey! Where are you going? Don\'t click away from my website! I haven\'t even asked you your weight yet! Ok, ok, I won\'t ask you your weight. But at least tell me on a scale of 1 to 10 how much you want to punch me in the face.');
-console.log('The user is ' + (scale * 10) + '% sure they want to punch the developer of this website in the face.');
-alert('Yikes, ' + scale + '/10, huh? Well, I can\'t say I blame you. If I were a ' + userAge + ' year old named ' + userName + ' whos last movie I\'ve seen was ' + movie + ', I would want to punch myself in the face that much too.');
+'use strict';
+
+var score = 0;
+var response1 = prompt('Have I programmed before attending Code Fellows?');
+if(isTrue(response1)){
+  alert('Correct! Your score is ' + score + '/1');
+  score ++;
+}
+else{
+  alert('Incorrect! Your score is ' + score + '/1');
+}
+var response2 = prompt('Have I ever been outside of the U.S. and Canada?');
+if(isTrue(response2)){
+  alert('Correct! Your score is ' + score + '/2');
+  score ++;
+}
+else{
+  alert('Incorrect! Your score is ' + score + '/2');
+}
+var response3 = prompt('Have I ever flown in a hot air balloon?');
+if(!isTrue(response3)){
+  alert('Correct! Your score is ' + score + '/3');
+  score ++;
+}
+else{
+  alert('Incorrect! Your score is ' + score + '/3');
+}
+var response4 = prompt('Do I have any pets?');
+if(isTrue(response4)){
+  alert('Correct! Your score is ' + score + '/4');
+  score ++;
+}
+else{
+  alert('Incorrect! Your score is ' + score + '/4');
+}
+var response5 = prompt('Am I able to calculate simplectic integrators?');
+if(!isTrue(response5)){
+  alert('Correct! Your score is ' + score + '/5');
+  score ++;
+}
+else{
+  alert('Incorrect! Your score is ' + score + '/5');
+}
+
+function isTrue(response){
+  if(
+  response.toUpperCase() === 'Y' ||
+  response.toUpperCase() === 'YES'){
+    return true;
+  }
+  else{
+    return false;
+  }
+};
+
+/*
+1. Have I programmed before code fellows? Y
+2. Have I ever been outside of the U.S. and Canada? Y
+3. Have I ever flown in a hot-air balloon? N
+4. Do I have any pets? N
+5. Am I able to calculate simplectic integrators? N
+*/
