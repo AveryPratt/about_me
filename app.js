@@ -1,0 +1,12 @@
+var userName = prompt('What is your name?');
+console.log('The user\'s name is ' + userName);
+var userAge = prompt('Hello ' + userName + ', How old are you?');
+console.log('The user\'s age is ' + userAge);
+alert('My you are... old. Are any of your childhood friends still alive today?');
+alert('I\'m sorry, that was rude of me. Besides, age is just a number. If it makes you feel better, my age is ' + (userAge - 1) + '. But there\'s no need to be jealous of my youth. You probably feel much younger than me on the inside, which is what really matters.');
+var movie = prompt('Allow me to appologize for my previous comment. I\'m sorry. There. That was awkward. Have you seen any good movies lately? What\'s the last movie that you have seen?');
+console.log('The last movie the user watched is ' + movie);
+alert('Wow, ' + userName + ', I never thought someone as old as ' + userAge + ' would have seen ' + movie + '! That\'s incredible!');
+var scale = prompt('Hey! Where are you going? Don\'t click away from my website! I haven\'t even asked you your weight yet! Ok, ok, I won\'t ask you your weight. But at least tell me on a scale of 1 to 10 how much you want to punch me in the face.');
+console.log('The user is ' + (scale * 10) + '% sure they want to punch the developer of this website in the face.');
+alert('Yikes, ' + scale + '/10, huh? Well, I can\'t say I blame you. If I were a ' + userAge + ' year old named ' + userName + ' whos last movie I\'ve seen was ' + movie + ', I would want to punch myself in the face that much too.');
