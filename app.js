@@ -2,11 +2,15 @@
 
 var score = 0;
 var totalScore = 0;
-
+var question1Passed = false;
+var question2Passed = false;
+var question3Passed = false;
+var question4Passed = false;
+var question5Passed = false;
 
 totalScore++;
 var question1 = 'Have I programmed before attending Code Fellows?';
-while(true){
+while(question1Passed === false){
   var response1 = prompt(question1).toUpperCase();
   console.log('Question ' +
   totalScore + ': ' +
@@ -28,12 +32,12 @@ while(true){
   response1 + '\nCorrect Answer: YES\nScore: ' +
   score + '/' +
   totalScore);
-  break;
+  question1Passed = true;
 }
 
 totalScore++;
 var question2 = 'Have I ever been outside of the U.S. and Canada?';
-while(true){
+while(question2Passed === false){
   var response2 = prompt(question2).toUpperCase();
   console.log('Question ' +
   totalScore + ': ' +
@@ -55,12 +59,12 @@ while(true){
   response2 + '\nCorrect Answer: YES\nScore: ' +
   score + '/' +
   totalScore);
-  break;
+  question2Passed = true;
 }
 
 totalScore++;
 var question3 = 'Have I ever flown in a hot air balloon?';
-while(true){
+while(question3Passed === false){
   var response3 = prompt(question3).toUpperCase();
   console.log('Question ' +
   totalScore + ': ' +
@@ -82,12 +86,12 @@ while(true){
   response3 + '\nCorrect Answer: YES\nScore: ' +
   score + '/' +
   totalScore);
-  break;
+  question3Passed = true;
 }
 
 totalScore++;
 var question4 = 'Do I have any pets?';
-while(true){
+while(question4Passed === false){
   var response4 = prompt(question4).toUpperCase();
   console.log('Question ' +
   totalScore + ': ' +
@@ -109,12 +113,12 @@ while(true){
   response4 + '\nCorrect Answer: YES\nScore: ' +
   score + '/' +
   totalScore);
-  break;
+  question4Passed = true;
 }
 
 totalScore++;
 var question5 = 'Am I able to calculate symplectic integrators?';
-while(true){
+while(question5Passed === false){
   var response5 = prompt(question5).toUpperCase();
   console.log('Question ' +
   totalScore + ': ' +
@@ -136,5 +140,5 @@ while(true){
   response5 + '\nCorrect Answer: YES\nScore: ' +
   score + '/' +
   totalScore);
-  break;
+  question5Passed = true;
 }

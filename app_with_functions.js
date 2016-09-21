@@ -3,12 +3,6 @@
 var score = 0;
 var totalScore = 0;
 
-queryCycle('Have I programmed before attending Code Fellows?', isYes);
-queryCycle('Have I ever been outside of the U.S. and Canada?', isYes);
-queryCycle('Have I ever flown in a hot air balloon?', isNo);
-queryCycle('Do I have any pets?', isNo);
-queryCycle('Am I able to calculate symplectic integrators?', isNo);
-
 function queryCycle(question, myFunc){
   var response = prompt(question);
   alert(assembleMessage(response, myFunc));
@@ -77,3 +71,9 @@ function isNo(response){
     return false;
   }
 };
+
+queryCycle('Have I programmed before attending Code Fellows?', isYes);
+queryCycle('Have I ever been outside of the U.S. and Canada?', isYes);
+queryCycle('Have I ever flown in a hot air balloon?', isNo);
+queryCycle('Do I have any pets?', isNo);
+queryCycle('Am I able to calculate symplectic integrators?', isNo);
