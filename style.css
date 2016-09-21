@@ -1,3 +1,37 @@
-*{
-  color: red;
+body{
+  background-color: #cccccc;
+}
+
+h1{
+  font-size: 100px;
+  font-family: cursive;
+  text-align: center;
+  border-bottom: 10px solid #006666;
+}
+
+h3{
+  margin: 20px 200px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+p#biography{
+  background-color: #ffff99;
+  font-family: helvetica;
+  margin: 0px 200px;
+  text-align: center;
+  border-top: 3px solid #000000;
+  border-radius: 5px;
+}
+
+footer{
+background-color: #ff99ff;
+border-top: 3px solid #000000;
+margin-top: 200px;
+padding-left: 100px;
+padding-top: 20px;
+}
+
+a{
+  color: #ff0000;
 }

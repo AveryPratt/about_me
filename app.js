@@ -1,48 +1,54 @@
 'use strict';
 
 var score = 0;
-var response1 = prompt('Have I programmed before attending Code Fellows?');
-if(isTrue(response1)){
-  alert('Correct! Your score is ' + score + '/1');
-  score ++;
-}
-else{
-  alert('Incorrect! Your score is ' + score + '/1');
-}
-var response2 = prompt('Have I ever been outside of the U.S. and Canada?');
-if(isTrue(response2)){
-  alert('Correct! Your score is ' + score + '/2');
-  score ++;
-}
-else{
-  alert('Incorrect! Your score is ' + score + '/2');
-}
-var response3 = prompt('Have I ever flown in a hot air balloon?');
-if(!isTrue(response3)){
-  alert('Correct! Your score is ' + score + '/3');
-  score ++;
-}
-else{
-  alert('Incorrect! Your score is ' + score + '/3');
-}
-var response4 = prompt('Do I have any pets?');
-if(isTrue(response4)){
-  alert('Correct! Your score is ' + score + '/4');
-  score ++;
-}
-else{
-  alert('Incorrect! Your score is ' + score + '/4');
-}
-var response5 = prompt('Am I able to calculate simplectic integrators?');
-if(!isTrue(response5)){
-  alert('Correct! Your score is ' + score + '/5');
-  score ++;
-}
-else{
-  alert('Incorrect! Your score is ' + score + '/5');
-}
+var totalScore = 0;
+var question1 = 'Have I programmed before attending Code Fellows?';
+var response1 = prompt(question1);
+alert(checkCorrect(question1, response1, isYes));
+var question2 = 'Have I ever been outside of the U.S. and Canada?';
+var response2 = prompt(question2);
+alert(checkCorrect(question2, response2, isYes));
+var question3 = 'Have I ever flown in a hot air balloon?';
+var response3 = prompt(question3);
+alert(checkCorrect(question3, response3, isNo));
+var question4 = 'Do I have any pets?';
+var response4 = prompt(question4);
+alert(checkCorrect(question4, response4, isNo));
+var question5 = 'Am I able to calculate symplectic integrators?';
+var response5 = prompt(question5);
+alert(checkCorrect(question5, response5, isNo));
 
-function isTrue(response){
+function checkCorrect(question, response, myFunc){
+  totalScore++;
+  var isCorrect = myFunc(response);
+  if(isCorrect){
+    score++;
+  }
+  var answer;
+  if(myFunc === isYes){
+    answer = 'Yes';
+  }
+  else if(myFunc === isNo){
+    answer = 'No';
+  }
+  else{
+    answer = 'Undefined';
+  }
+  var message = assembleMessage(question, answer, response, isCorrect);
+  console.log(message);
+  if(isCorrect){
+    return 'Correct! Your score is ' + score + '/' + totalScore;
+  }
+  else{
+    return 'Incorrect! Your score is ' + score + '/' + totalScore;
+  }
+};
+
+function assembleMessage(question, answer, response, isCorrect){
+  return 'Question ' + totalScore + ': ' + question + '\nResponse: ' + response + '\nCorrect Answer: ' + answer + '\nPoint Counted: ' + isCorrect + '\nScore: ' + score + '/' + totalScore;
+};
+
+function isYes(response){
   if(
   response.toUpperCase() === 'Y' ||
   response.toUpperCase() === 'YES'){
@@ -53,10 +59,13 @@ function isTrue(response){
   }
 };
 
-/*
-1. Have I programmed before code fellows? Y
-2. Have I ever been outside of the U.S. and Canada? Y
-3. Have I ever flown in a hot-air balloon? N
-4. Do I have any pets? N
-5. Am I able to calculate simplectic integrators? N
-*/
+function isNo(response){
+  if(
+  response.toUpperCase() === 'N' ||
+  response.toUpperCase() === 'NO'){
+    return true;
+  }
+  else{
+    return false;
+  }
+};
