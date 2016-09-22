@@ -1,10 +1,16 @@
-body {
+* {
+  font-family: helvetica;
+}
+
+html, body {
   background-color: #cccccc;
+  margin: 0px;
+  padding: 0px;
 }
 
 h1 {
   font-size: 100px;
-  font-family: cursive;
+  font-family: 'Yatra One', cursive;
   text-align: center;
   border-bottom: 10px solid #006666;
 }
@@ -17,29 +23,73 @@ img {
   margin-right: auto;
 }
 
-h3 {
+h2 {
   margin: 20px 200px;
-  font-family: sans-serif;
+  font-family: 'Yatra One', cursive;
   text-align: center;
+}
+
+section {
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 10px 200px;
+  border-radius: 30px;
+}
+
+section#interests {
+  float: right;
+}
+
+section#movies {
+  float: left;
 }
 
 p#biography {
+  width: 500px;
   background-color: #ffff99;
-  font-family: helvetica;
-  margin: 0px 200px;
   text-align: center;
   border-top: 3px solid #000000;
   border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul, ol {
+  border-top: 3px solid #000000;
+  border-radius: 5px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#interestsList {
+  background-color: #99ffff;
+}
+
+#movieList {
+  background-color: #bbffbb;
 }
 
 footer {
-background-color: #ff99ff;
+display: block;
+background-color: #ffbbbb;
 border-top: 3px solid #000000;
-margin-top: 200px;
 padding-left: 100px;
 padding-top: 20px;
+height: 50px;
 }
 
 a {
   color: #ff0000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #330066;
+  text-decoration: none;
 }
