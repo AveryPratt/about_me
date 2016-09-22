@@ -8,7 +8,7 @@ var question3Passed = false;
 var question4Passed = false;
 var question5Passed = false;
 
-totalScore++;
+totalScore += 1;
 var question1 = 'Have I programmed before attending Code Fellows?';
 while(question1Passed === false){
   console.log('Question ' +
@@ -35,7 +35,7 @@ while(question1Passed === false){
   question1Passed = true;
 }
 
-totalScore++;
+totalScore += 1;
 var question2 = 'Have I ever been outside of the U.S. and Canada?';
 while(question2Passed === false){
   console.log('Question ' +
@@ -43,7 +43,7 @@ while(question2Passed === false){
   question2);
   var response2 = prompt(question2).toUpperCase();
   if(response2 === 'Y' || response2 === 'YES' || response2 === 'YEP'){
-    score++;
+    score += 1;
     alert('Correct! Your score is ' + score + '/' + totalScore);
   }
   else if(response2 === 'N' || response2 === 'NO' || response2 === 'NOPE'){
@@ -62,7 +62,7 @@ while(question2Passed === false){
   question2Passed = true;
 }
 
-totalScore++;
+totalScore += 1;
 var question3 = 'Have I ever flown in a hot air balloon?';
 while(question3Passed === false){
   console.log('Question ' +
@@ -73,7 +73,7 @@ while(question3Passed === false){
     alert('Incorrect! Your score is ' + score + '/' + totalScore);
   }
   else if(response3 === 'N' || response3 === 'NO' || response3 === 'NOPE'){
-    score++;
+    score += 1;
     alert('Correct! Your score is ' + score + '/' + totalScore);
   }
   else{
@@ -89,7 +89,7 @@ while(question3Passed === false){
   question3Passed = true;
 }
 
-totalScore++;
+totalScore += 1;
 var question4 = 'Do I have any pets?';
 while(question4Passed === false){
   console.log('Question ' +
@@ -100,7 +100,7 @@ while(question4Passed === false){
     alert('Incorrect! Your score is ' + score + '/' + totalScore);
   }
   else if(response4 === 'N' || response4 === 'NO' || response4 === 'NOPE'){
-    score++;
+    score += 1;
     alert('Correct! Your score is ' + score + '/' + totalScore);
   }
   else{
@@ -116,7 +116,7 @@ while(question4Passed === false){
   question4Passed = true;
 }
 
-totalScore++;
+totalScore += 1;
 var question5 = 'Am I able to calculate symplectic integrators?';
 while(question5Passed === false){
   console.log('Question ' +
@@ -127,7 +127,7 @@ while(question5Passed === false){
     alert('Incorrect! Your score is ' + score + '/' + totalScore);
   }
   else if(response5 === 'N' || response5 === 'NO' || response5 === 'NOPE'){
-    score++;
+    score += 1;
     alert('Correct! Your score is ' + score + '/' + totalScore);
   }
   else{
@@ -143,7 +143,7 @@ while(question5Passed === false){
   question5Passed = true;
 }
 
-totalScore++;
+totalScore += 1;
 var question6 = 'How old am I?';
 console.log('Question ' +
 totalScore + ': ' +
@@ -152,7 +152,7 @@ for(var i = 0; i < 4; i++){
   var response6 = prompt(question6).toUpperCase();
   var responseNum = parseInt(response6);
   if(responseNum === 25){
-    score++;
+    score += 1;
     if(i === 0){
       score++;
       console.log('------------1up------------');
@@ -220,7 +220,7 @@ for(var i = 0; i < 4; i++){
   }
 }
 
-totalScore++;
+totalScore += 1;
 var question7 = 'What is a flavor of ice cream that I would like?';
 console.log('Question ' +
 totalScore + ': ' +
@@ -237,7 +237,7 @@ for(var j = 0; j < 6; j++){
     response7 === 'VANILLA'){
     score++;
     if(j === 0){
-      score++;
+      score += 1;
       console.log('------------1up------------');
       alert('You earned a bonus point! Your score is ' + score + '/' + totalScore);
     }
