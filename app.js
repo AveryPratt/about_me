@@ -170,40 +170,46 @@ for(var i = 0; i < 4; i++){
   }
 }
 
-totalScore += 1;
-var question7 = 'What is a flavor of ice cream that I would like?';
-console.log('Question ' + totalScore + ': ' + question7);
-for(var j = 0; j < 6; j++){
-  var flavors = ['CHOCOLATE CHIP COOKIE DOUGH', 'COOKIE DOUGH', 'CARAMEL', 'HAZELNUT', 'STRAWBERRY', 'MINT', 'MINT CHOCOLATE CHIP', 'VANILLA'];
-  var response7 = prompt(question7).toUpperCase();
-  for(var k = 0; k < flavors.length; k++){
-    if(response7 === flavors[k]){
-      score++;
-      if(j === 0){
-        score += 1;
-        console.log('------------1up------------');
-        alert('You earned a bonus point! Your score is ' + score + '/' + totalScore);
-      }
-      else{
-        alert('Correct! Your score is ' + score + '/' + totalScore);
-      }
-      console.log('Response: ' + responseNum + '\nCorrect Answers: chocolate chip cookie dough, cookie dough, caramel, hazelnut, strawberry, mint, mint chocolate chip, vanilla\nFinal Score: ' + score + '/' + totalScore);
-      break;
-    }
-    else{
-      if(j >= 6){
-        console.log('Response: ' + responseNum + '\nCorrect Answer: 25\nTries Remaining: 0\nScore: ' + score + '/' + totalScore);
-        alert('Blagh. The flavors I like are chocolate chip cookie dough, cookie dough, caramel, hazelnut, strawberry, mint, mint chocolate chip, and vanilla.\nFinal Score: ' + score + '/' + totalScore);
-      }
-      else{
-        console.log('Response: ' + response7 + '\nCorrect Answer: A better flavor than ' + response7 + '\nTries Remaining:' + (6 - j) + '\nScore: ' + score + '/' + totalScore);
-        if(j < 6){
-          alert('Ew. No. You have ' + (6 - j) + ' more guesses');
+// QUESTION 7
+
+function quest7() {
+  totalScore += 1;
+  var question7 = 'What is a flavor of ice cream that I would like?';
+  console.log('Question ' + totalScore + ': ' + question7);
+  for(var j = 0; j < 6; j++){
+    var flavors = ['CHOCOLATE CHIP COOKIE DOUGH', 'COOKIE DOUGH', 'CARAMEL', 'HAZELNUT', 'STRAWBERRY', 'MINT', 'MINT CHOCOLATE CHIP', 'VANILLA'];
+    var response7 = prompt(question7).toUpperCase();
+    for(var k = 0; k < flavors.length; k++){
+      if(response7 === flavors[k]){
+        score++;
+        if(j === 0){
+          score += 1;
+          console.log('------------1up------------');
+          alert('You earned a bonus point! Your score is ' + score + '/' + totalScore);
         }
         else{
-          alert('Ew. No. You have 1 more guess');
+          alert('Correct! Your score is ' + score + '/' + totalScore);
+        }
+        console.log('Response: ' + responseNum + '\nCorrect Answers: chocolate chip cookie dough, cookie dough, caramel, hazelnut, strawberry, mint, mint chocolate chip, vanilla\nFinal Score: ' + score + '/' + totalScore);
+        break;
+      }
+      else{
+        if(j >= 6){
+          console.log('Response: ' + responseNum + '\nCorrect Answer: 25\nTries Remaining: 0\nScore: ' + score + '/' + totalScore);
+          alert('Blagh. The flavors I like are chocolate chip cookie dough, cookie dough, caramel, hazelnut, strawberry, mint, mint chocolate chip, and vanilla.\nFinal Score: ' + score + '/' + totalScore);
+        }
+        else{
+          console.log('Response: ' + response7 + '\nCorrect Answer: A better flavor than ' + response7 + '\nTries Remaining:' + (6 - j) + '\nScore: ' + score + '/' + totalScore);
+          if(j < 6){
+            alert('Ew. No. You have ' + (6 - j) + ' more guesses');
+          }
+          else{
+            alert('Ew. No. You have 1 more guess');
+          }
         }
       }
     }
   }
 }
+
+quest7();
