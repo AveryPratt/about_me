@@ -80,26 +80,29 @@ function quest3() {
 }
 quest3();
 
-totalScore += 1;
-var question4 = 'Do I have any pets?';
-while(question4Passed === false){
-  console.log('Question ' + totalScore + ': ' + question4);
-  var response4 = prompt(question4).toUpperCase();
-  if(response4 === 'Y' || response4 === 'YES' || response4 === 'YEP'){
-    alert('Incorrect! Your score is ' + score + '/' + totalScore);
+function quest4() {
+  totalScore += 1;
+  var question4 = 'Do I have any pets?';
+  while(question4Passed === false){
+    console.log('Question ' + totalScore + ': ' + question4);
+    var response4 = prompt(question4).toUpperCase();
+    if(response4 === 'Y' || response4 === 'YES' || response4 === 'YEP'){
+      alert('Incorrect! Your score is ' + score + '/' + totalScore);
+    }
+    else if(response4 === 'N' || response4 === 'NO' || response4 === 'NOPE'){
+      score += 1;
+      alert('Correct! Your score is ' + score + '/' + totalScore);
+    }
+    else{
+      alert('What language are you speaking? Try again');
+      console.log('Response: ' + response4 + '\n------------Invalid Answer------------');
+      continue;
+    }
+    console.log('Response: ' + response4 + '\nCorrect Answer: YES\nScore: ' + score + '/' + totalScore);
+    question4Passed = true;
   }
-  else if(response4 === 'N' || response4 === 'NO' || response4 === 'NOPE'){
-    score += 1;
-    alert('Correct! Your score is ' + score + '/' + totalScore);
-  }
-  else{
-    alert('What language are you speaking? Try again');
-    console.log('Response: ' + response4 + '\n------------Invalid Answer------------');
-    continue;
-  }
-  console.log('Response: ' + response4 + '\nCorrect Answer: YES\nScore: ' + score + '/' + totalScore);
-  question4Passed = true;
 }
+quest4();
 
 totalScore += 1;
 var question5 = 'Am I able to calculate symplectic integrators?';
