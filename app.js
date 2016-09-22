@@ -56,26 +56,29 @@ function quest2() {
 }
 quest2();
 
-totalScore += 1;
-var question3 = 'Have I ever flown in a hot air balloon?';
-while(question3Passed === false){
-  console.log('Question ' + totalScore + ': ' + question3);
-  var response3 = prompt(question3).toUpperCase();
-  if(response3 === 'Y' || response3 === 'YES' || response3 === 'YEP'){
-    alert('Incorrect! Your score is ' + score + '/' + totalScore);
+function quest3() {
+  totalScore += 1;
+  var question3 = 'Have I ever flown in a hot air balloon?';
+  while(question3Passed === false){
+    console.log('Question ' + totalScore + ': ' + question3);
+    var response3 = prompt(question3).toUpperCase();
+    if(response3 === 'Y' || response3 === 'YES' || response3 === 'YEP'){
+      alert('Incorrect! Your score is ' + score + '/' + totalScore);
+    }
+    else if(response3 === 'N' || response3 === 'NO' || response3 === 'NOPE'){
+      score += 1;
+      alert('Correct! Your score is ' + score + '/' + totalScore);
+    }
+    else{
+      alert('What language are you speaking? Try again');
+      console.log('Response: ' + response3 + '\n------------Invalid Answer------------');
+      continue;
+    }
+    console.log('Response: ' + response3 + '\nCorrect Answer: YES\nScore: ' + score + '/' + totalScore);
+    question3Passed = true;
   }
-  else if(response3 === 'N' || response3 === 'NO' || response3 === 'NOPE'){
-    score += 1;
-    alert('Correct! Your score is ' + score + '/' + totalScore);
-  }
-  else{
-    alert('What language are you speaking? Try again');
-    console.log('Response: ' + response3 + '\n------------Invalid Answer------------');
-    continue;
-  }
-  console.log('Response: ' + response3 + '\nCorrect Answer: YES\nScore: ' + score + '/' + totalScore);
-  question3Passed = true;
 }
+quest3();
 
 totalScore += 1;
 var question4 = 'Do I have any pets?';
