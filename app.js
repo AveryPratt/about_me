@@ -128,64 +128,65 @@ function quest5() {
 }
 quest5();
 
-totalScore += 1;
-var question6 = 'How old am I?';
-console.log('Question ' + totalScore + ': ' + question6);
-for(var i = 0; i < 4; i++){
-  var response6 = prompt(question6).toUpperCase();
-  var responseNum = parseInt(response6);
-  if(responseNum === 25){
-    score += 1;
-    if(i === 0){
-      score++;
-      console.log('------------1up------------');
-      alert('You earned a bonus point! Your score is ' + score + '/' + totalScore);
-    }
-    else{
-      alert('Correct! Your score is ' + score + '/' + totalScore);
-    }
-    console.log('Response: ' + responseNum + '\nCorrect Answer: 25\nScore: ' + score + '/' + totalScore);
-    break;
-  }
-  else if(responseNum < 25){
-    if(i >= 3){
-      console.log('Response: ' + responseNum + '\nCorrect Answer: 25\nTries Remaining: 0\nScore: ' + score + '/' + totalScore);
-      alert('Incorrect! I am actually 25. Your score is ' + score + '/' + totalScore);
-    }
-    else{
-      console.log('Response: ' + responseNum + '\nCorrect Answer: higher than ' + responseNum + '\nTries Remaining:' + (3 - i) + '\nScore: ' + score + '/' + totalScore);
-      if(i < 2){
-        alert('Too low. You have ' + (3 - i) + ' more guesses');
+function quest6() {
+  totalScore += 1;
+  var question6 = 'How old am I?';
+  console.log('Question ' + totalScore + ': ' + question6);
+  for(var i = 0; i < 4; i++){
+    var response6 = prompt(question6).toUpperCase();
+    var responseNum = parseInt(response6);
+    if(responseNum === 25){
+      score += 1;
+      if(i === 0){
+        score++;
+        console.log('------------1up------------');
+        alert('You earned a bonus point! Your score is ' + score + '/' + totalScore);
       }
       else{
-        alert('Too low. You have 1 more guess');
+        alert('Correct! Your score is ' + score + '/' + totalScore);
       }
+      console.log('Response: ' + responseNum + '\nCorrect Answer: 25\nScore: ' + score + '/' + totalScore);
+      break;
     }
-  }
-  else if(responseNum > 25){
-    if(i >= 3){
-      console.log('Response: ' + responseNum + '\nCorrect Answer: 25\nTries Remaining: 0\nScore: ' + score + '/' + totalScore);
-      alert('Incorrect! I am actually 25. Your score is ' + score + '/' + totalScore);
-    }
-    else{
-      console.log('Response: ' + responseNum + '\nCorrect Answer: lower than ' + responseNum + '\nTries Remaining:' + (3 - i) + '\nScore: ' + score + '/' + totalScore);
-      if(i < 2){
-        alert('Too high. You have ' + (3 - i) + ' more guesses');
+    else if(responseNum < 25){
+      if(i >= 3){
+        console.log('Response: ' + responseNum + '\nCorrect Answer: 25\nTries Remaining: 0\nScore: ' + score + '/' + totalScore);
+        alert('Incorrect! I am actually 25. Your score is ' + score + '/' + totalScore);
       }
       else{
-        alert('Too high. You have 1 more guess');
+        console.log('Response: ' + responseNum + '\nCorrect Answer: higher than ' + responseNum + '\nTries Remaining:' + (3 - i) + '\nScore: ' + score + '/' + totalScore);
+        if(i < 2){
+          alert('Too low. You have ' + (3 - i) + ' more guesses');
+        }
+        else{
+          alert('Too low. You have 1 more guess');
+        }
       }
     }
-  }
-  else{
-    console.log('Response: ' + responseNum + '\n------------Invalid Answer------------');
-    alert('That isn\'t a valid number. Try again.');
-    i--;
-    continue;
+    else if(responseNum > 25){
+      if(i >= 3){
+        console.log('Response: ' + responseNum + '\nCorrect Answer: 25\nTries Remaining: 0\nScore: ' + score + '/' + totalScore);
+        alert('Incorrect! I am actually 25. Your score is ' + score + '/' + totalScore);
+      }
+      else{
+        console.log('Response: ' + responseNum + '\nCorrect Answer: lower than ' + responseNum + '\nTries Remaining:' + (3 - i) + '\nScore: ' + score + '/' + totalScore);
+        if(i < 2){
+          alert('Too high. You have ' + (3 - i) + ' more guesses');
+        }
+        else{
+          alert('Too high. You have 1 more guess');
+        }
+      }
+    }
+    else{
+      console.log('Response: ' + responseNum + '\n------------Invalid Answer------------');
+      alert('That isn\'t a valid number. Try again.');
+      i--;
+      continue;
+    }
   }
 }
-
-// QUESTION 7
+quest6();
 
 function quest7() {
   totalScore += 1;
