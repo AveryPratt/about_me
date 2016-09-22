@@ -32,26 +32,29 @@ function quest1() {
 }
 quest1();
 
-totalScore += 1;
-var question2 = 'Have I ever been outside of the U.S. and Canada?';
-while(question2Passed === false){
-  console.log('Question ' + totalScore + ': ' + question2);
-  var response2 = prompt(question2).toUpperCase();
-  if(response2 === 'Y' || response2 === 'YES' || response2 === 'YEP'){
-    score += 1;
-    alert('Correct! Your score is ' + score + '/' + totalScore);
+function quest2() {
+  totalScore += 1;
+  var question2 = 'Have I ever been outside of the U.S. and Canada?';
+  while(question2Passed === false){
+    console.log('Question ' + totalScore + ': ' + question2);
+    var response2 = prompt(question2).toUpperCase();
+    if(response2 === 'Y' || response2 === 'YES' || response2 === 'YEP'){
+      score += 1;
+      alert('Correct! Your score is ' + score + '/' + totalScore);
+    }
+    else if(response2 === 'N' || response2 === 'NO' || response2 === 'NOPE'){
+      alert('Incorrect! Your score is ' + score + '/' + totalScore);
+    }
+    else{
+      alert('What language are you speaking? Try again');
+      console.log('Response: ' + response2 + '\n------------Invalid Answer------------');
+      continue;
+    }
+    console.log('Response: ' + response2 + '\nCorrect Answer: YES\nScore: ' + score + '/' + totalScore);
+    question2Passed = true;
   }
-  else if(response2 === 'N' || response2 === 'NO' || response2 === 'NOPE'){
-    alert('Incorrect! Your score is ' + score + '/' + totalScore);
-  }
-  else{
-    alert('What language are you speaking? Try again');
-    console.log('Response: ' + response2 + '\n------------Invalid Answer------------');
-    continue;
-  }
-  console.log('Response: ' + response2 + '\nCorrect Answer: YES\nScore: ' + score + '/' + totalScore);
-  question2Passed = true;
 }
+quest2();
 
 totalScore += 1;
 var question3 = 'Have I ever flown in a hot air balloon?';
