@@ -8,26 +8,29 @@ var question3Passed = false;
 var question4Passed = false;
 var question5Passed = false;
 
-totalScore += 1;
-var question1 = 'Have I programmed before attending Code Fellows?';
-while(question1Passed === false){
-  console.log('Question ' + totalScore + ': ' + question1);
-  var response1 = prompt(question1).toUpperCase();
-  if(response1 === 'Y' || response1 === 'YES' || response1 === 'YEP'){
-    score++;
-    alert('Correct! Your score is ' + score + '/' + totalScore);
+function quest1() {
+  totalScore += 1;
+  var question1 = 'Have I programmed before attending Code Fellows?';
+  while(question1Passed === false){
+    console.log('Question ' + totalScore + ': ' + question1);
+    var response1 = prompt(question1).toUpperCase();
+    if(response1 === 'Y' || response1 === 'YES' || response1 === 'YEP'){
+      score++;
+      alert('Correct! Your score is ' + score + '/' + totalScore);
+    }
+    else if(response1 === 'N' || response1 === 'NO' || response1 === 'NOPE'){
+      alert('Incorrect! Your score is ' + score + '/' + totalScore);
+    }
+    else{
+      alert('What language are you speaking? Try again');
+      console.log('Response: ' + response1 + '\n------------Invalid Answer------------');
+      continue;
+    }
+    console.log('Response: ' + response1 + '\nCorrect Answer: YES\nScore: ' + score + '/' + totalScore);
+    question1Passed = true;
   }
-  else if(response1 === 'N' || response1 === 'NO' || response1 === 'NOPE'){
-    alert('Incorrect! Your score is ' + score + '/' + totalScore);
-  }
-  else{
-    alert('What language are you speaking? Try again');
-    console.log('Response: ' + response1 + '\n------------Invalid Answer------------');
-    continue;
-  }
-  console.log('Response: ' + response1 + '\nCorrect Answer: YES\nScore: ' + score + '/' + totalScore);
-  question1Passed = true;
 }
+quest1();
 
 totalScore += 1;
 var question2 = 'Have I ever been outside of the U.S. and Canada?';
