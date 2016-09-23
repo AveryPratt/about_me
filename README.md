@@ -6,6 +6,6 @@ Avery Pratt's Guessing Game is not to be held responsible for any symptoms that 
 
 # Contributers
 
-Avery Pratt
-Hawa Abdi
+Avery Pratt,
+Hawa Abdi,
 Benjamin Petty
