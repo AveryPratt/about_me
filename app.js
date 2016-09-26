@@ -47,21 +47,19 @@ var question7 = {
 };
 
 function askQuestion(question){
-  var isValid = false;
   totalScore += 1;
   for(var i = 0; i < question.tries; i++){
+    var isValid = false;
     while(!isValid){
-      var userAnswer = prompt(question.text);
-      if(typeof userAnswer === 'string'){
-        userAnswer = userAnswer.toUpperCase();
-      }
+      var userAnswer = prompt(question.text).toUpperCase();
       var solution;
-      switch(typeof question.answer){
-      case 'number':
+      if(typeof question.answer === 'number'){
         solution = solveNumberGuess(question, userAnswer, i);
-      case 'boolean':
+      }
+      else if(typeof question.answer === 'boolean'){
         solution = solveYesNo(question, userAnswer);
-      default:
+      }
+      else{
         solution = solveMatchGuess(question, userAnswer, i);
       }
       if(solution.isValid){
@@ -81,15 +79,15 @@ function askQuestion(question){
 }
 
 function solveNumberGuess(question, userAnswer, i){
-  var triesLeft = question.tries - i;
+  var triesLeft = question.tries - i - 1;
   var isValid = (typeof parseInt(userAnswer)) === 'number';
-  var isCorrect = question.answer === userAnswer;
+  var isCorrect = question.answer === parseInt(userAnswer);
   if(isCorrect){
     score += 1;
   }
-  var isAnswerTooHigh = question.answer > userAnswer;
-  var consoleMessage = assembleNumberGuessConsoleMessage(triesLeft, isCorrect, isAnswerTooHigh, userAnswer, isAnswerTooHigh, question);
-  var alertMessage = assembleNumberGuessAlertMessage(isCorrect, isAnswerTooHigh);
+  var isAnswerTooLow = question.answer > userAnswer;
+  var consoleMessage = assembleNumberGuessConsoleMessage(triesLeft, isCorrect, userAnswer, isAnswerTooLow, question);
+  var alertMessage = assembleNumberGuessAlertMessage(isCorrect, isAnswerTooLow, triesLeft, question);
   return{
     isValid: isValid,
     isCorrect: isCorrect,
@@ -98,16 +96,16 @@ function solveNumberGuess(question, userAnswer, i){
   };
 }
 
-function assembleNumberGuessConsoleMessage(triesLeft, isCorrect, userAnswer, isAnswerTooHigh, question){
+function assembleNumberGuessConsoleMessage(triesLeft, isCorrect, userAnswer, isAnswerTooLow, question){
   if(triesLeft > 0){
     if(isCorrect){
       return 'Question: ' + question.text + '\nResponse: ' + userAnswer + '\nAnswer: Correct!\nTries left: ' + triesLeft;
     }
-    else if(isAnswerTooHigh){
-      return 'Question: ' + question.text + '\nResponse: ' + userAnswer + '\nAnswer: Too High\nTries left: ' + triesLeft;
+    else if(isAnswerTooLow){
+      return 'Question: ' + question.text + '\nResponse: ' + userAnswer + '\nAnswer: Too Low\nTries left: ' + triesLeft;
     }
     else{
-      return 'Question: ' + question.text + '\nResponse: ' + userAnswer + '\nAnswer: Too Low\nTries left: ' + triesLeft;
+      return 'Question: ' + question.text + '\nResponse: ' + userAnswer + '\nAnswer: Too High\nTries left: ' + triesLeft;
     }
   }
   else {
@@ -115,22 +113,27 @@ function assembleNumberGuessConsoleMessage(triesLeft, isCorrect, userAnswer, isA
   }
 }
 
-function assembleNumberGuessAlertMessage(isCorrect, isAnswerTooHigh){
+function assembleNumberGuessAlertMessage(isCorrect, isAnswerTooLow, triesLeft, question){
   if(isCorrect){
     return 'Correct! Your score is ' + score + '/' + totalScore + '.';
   }
   else{
-    if(isAnswerTooHigh){
-      return 'Wrong! Too High. Your score is ' + score + '/' + totalScore + '.';
+    if(triesLeft > 0){
+      if(isAnswerTooLow){
+        return 'Wrong! Too Low. You have ' + triesLeft + ' tries left.';
+      }
+      else{
+        return 'Wrong! Too High. You have ' + triesLeft + ' tries left.';
+      }
     }
     else{
-      return 'Wrong! Too Low. Your score is ' + score + '/' + totalScore + '.';
+      return 'Wrong. The answer is ' + question.answer + '. Your score is ' + score + '/' + totalScore + '.';
     }
   }
 }
 
 function solveMatchGuess(question, userAnswer, i){
-  var triesLeft = question.tries - i;
+  var triesLeft = question.tries - i - 1;
   var isCorrect = false;
   for(var j in question.answer){
     if (userAnswer === question.answer[j]){
@@ -222,5 +225,5 @@ askQuestion(question2);
 askQuestion(question3);
 askQuestion(question4);
 askQuestion(question5);
-//askQuestion(question6);
+askQuestion(question6);
 askQuestion(question7);
