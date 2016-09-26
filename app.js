@@ -99,7 +99,7 @@ function solveNumberGuess(question, userAnswer, i){
 function assembleNumberGuessConsoleMessage(triesLeft, isCorrect, userAnswer, isAnswerTooLow, question){
   if(triesLeft > 0){
     if(isCorrect){
-      return 'Question: ' + question.text + '\nResponse: ' + userAnswer + '\nAnswer: Correct!\nTries left: ' + triesLeft;
+      return 'Question: ' + question.text + '\nResponse: ' + userAnswer + '\nAnswer: Correct!\nScore: ' + score + '/' + totalScore;
     }
     else if(isAnswerTooLow){
       return 'Question: ' + question.text + '\nResponse: ' + userAnswer + '\nAnswer: Too Low\nTries left: ' + triesLeft;
